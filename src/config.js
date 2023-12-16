@@ -12,8 +12,8 @@ const collectionName = "Shinobi"; // Name of your collection.
 const collectionDescription = "Elite digital ninjas, guardians of BCH."; // Description of your collection.
 const namePrefix = "Shinobi"; // Prefix for the NFT name.
 const description = "Elite digital ninja, guardian of BCH."; // NFT description.
-const baseUri = process.env.SHINOBI_BASE_URI || "ipfs://NewUriToReplace/images";
-const baseIconUri = process.env.SHINOBI_BASE_ICON_URI || "ipfs://NewUriToReplace/icons";
+const baseUri = process.env.SHINOBI_BASE_URI || "https://shady.sploit.cash/images";
+const baseIconUri = process.env.SHINOBI_BASE_ICON_URI || "https://shady.sploit.cash/icons";
 
 // Background for your collection. This is used for OpenAI integration.
 const collectionBackground = `The Shinobi are elite digital ninjas, guardians of the BCH Blockchain and its Cashtokens. Entrusted by the mysterious Satoshi, they blend cryptographic arts with ancient martial traditions, ensuring the integrity and balance of the decentralized world.`;
@@ -31,9 +31,9 @@ const bcmrMetadata = {
     name: "Project Registry",
     description: "Description for your registry.",
     uris: {
-      icon: "https://example.com/img/icon.png",
-      web: "https://example.com/",
-      registry: "https://example.com/.well-known/bitcoin-cash-metadata-registry.json"
+      icon: "https://shady.sploit.cash/img/icon.png",
+      web: "https://shady.sploit.cash",
+      registry: "https://shady.sploit.cash/.well-known/bitcoin-cash-metadata-registry.json"
     }
   },
   identities: {},
@@ -43,11 +43,11 @@ const bcmrMetadata = {
 // Set the category to your CashToken genesis unspent.
 // https://bitcash.dev/guide/cashtokens.html
 const bchMetadata = {
-  category: "YOUR_GENESIS_UNSPENT_TX",
+  category: "569d9868f77a35a75486c6f8a7723dc00bf3df1b0711c6bb51f6545db3b3383b",
   symbol: "SHINOBI",
   uris: {
-    icon: "",
-    image: "",
+    icon: "https://shady.sploit.cash/img/icon.png",
+    image: "https://shady.sploit.cash/img/image.png",
     web: "",
     telegram: "",
     twitter: "",

@@ -352,6 +352,8 @@ const writeMetaData = (_data) => {
 
 const writeBCMR = () => {
   let data = JSON.parse(fs.readFileSync(`${basePath}/build/json/_metadata.json`));
+  let rarity = JSON.parse(fs.readFileSync(`${basePath}/build/json/_rarity2.json`));
+  // console.log(JSON.stringify(rarity, null, 4))
   let bcmr = bcmrMetadata;
   let date = new Date().toISOString();
 
@@ -363,7 +365,35 @@ const writeBCMR = () => {
     o.attributes.forEach((oldFormat) => {
       attributes[oldFormat.trait_type] = oldFormat.value;
     });
-    nfts[binToHex(bigIntToVmNumber(BigInt(i)))] = {
+
+    // console.log(rarity["Background"])
+    
+    rarity["Background"].forEach((attr) => {
+      if (attr.trait == attributes["Background"]) {
+        // console.log(attr.trait)
+        // console.log(attributes["Background"])
+        console.log(attr.invchance)
+        attributes["health"] = attr.invchance;
+      }
+      
+    })
+
+    rarity["Eyes"].forEach((attr) => {
+      if (attr.trait == attributes["Eyes"]) {
+        // console.log(attr.trait)
+        // console.log(attributes["Background"])
+        console.log(attr.invchance)
+        attributes["speed"] = attr.invchance;
+      }
+      
+    })
+    
+
+    
+    // attributes["speed"] = i+1;
+
+
+    nfts[binToHex(bigIntToVmNumber(BigInt(i + 1)))] = {
       "name": o.name,
       "description": o.description,
       "uris": {
